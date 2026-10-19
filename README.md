@@ -47,10 +47,12 @@ La infraestructura incluirá una red de gestión aislada y una DMZ para el hosti
 
 ## Estructura del repositorio
 
-- [`01-contexto/`](./01-contexto/): objetivo, equipo, problema y alcance del proyecto.
-- [`02-investigacion/`](./02-investigacion/): investigación sobre DNS, DHCP, SOC, seguridad, blockchain y ataques.
-- [`03-aplicativos/`](./03-aplicativos/): herramientas que utilizaremos y su función.
-- [`04-equipo/`](./04-equipo/): integrantes, roles y avances semanales.
+| Apartado | Tipo de contenido | Qué encontrarás | Acceso |
+|---|---|---|---|
+| Contexto del proyecto | Presentación y objetivos | Objetivo principal, problema que resuelve y alcance | [Ver contexto](./01-contexto/) |
+| Investigaciones | Documentación técnica | DNS, DHCP, SOC, seguridad y blockchain | [Ver investigaciones](./02-investigacion/README.md) |
+| Aplicativos | Herramientas y tecnologías | Aplicativos previstos y función dentro del proyecto | [Ver aplicativos](./03-aplicativos/) |
+| Equipo | Organización y seguimiento | Integrantes, responsabilidades y avances semanales | [Ver equipo](./04-equipo/) |
 
 ## Autoría
 
