@@ -49,10 +49,10 @@ La infraestructura incluirá una red de gestión aislada y una DMZ para el hosti
 
 | Apartado | Tipo de contenido | Qué encontrarás | Acceso |
 |---|---|---|---|
-| Contexto del proyecto | Presentación y objetivos | Objetivo principal, problema que resuelve y alcance | [Ver contexto](./01-contexto/) |
+| Contexto del proyecto | Presentación y objetivos | Objetivo principal, problema que resuelve y alcance | [Ver contexto](./01-contexto/README.md) |
 | Investigaciones | Documentación técnica | DNS, DHCP, SOC, seguridad y blockchain | [Ver investigaciones](./02-investigacion/README.md) |
-| Aplicativos | Herramientas y tecnologías | Aplicativos previstos y función dentro del proyecto | [Ver aplicativos](./03-aplicativos/) |
-| Equipo | Organización y seguimiento | Integrantes, responsabilidades y avances semanales | [Ver equipo](./04-equipo/) |
+| Aplicativos | Herramientas y tecnologías | Aplicativos previstos y función dentro del proyecto | [Ver aplicativos](./03-aplicativos/README.md) |
+| Equipo | Organización y seguimiento | Integrantes, responsabilidades y avances semanales | [Ver equipo](./04-equipo/README.md) |
 
 ## Autoría
 
