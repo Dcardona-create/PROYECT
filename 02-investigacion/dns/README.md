@@ -6,17 +6,15 @@ Estado: en desarrollo. Documento de investigación, no memoria de un despliegue 
 
 ## Índice de contenidos
 
-| Apartado | Contenido | Acceso |
-|---|---|---|
-| Fundamentos | Qué es DNS y para qué sirve | [Leer](#fundamentos) |
-| Resolución | Recorrido de una consulta y caché | [Leer](#resolución) |
-| Registros | Datos publicados en DNS | [Leer](#registros) |
-| Roles de servidores | Recursivo, autoritativo y reenviador | [Leer](#roles-de-servidores) |
-| DNS en el proyecto | Pi-hole y decisiones pendientes | [Leer](#dns-en-el-proyecto) |
-| Seguridad | Riesgos, controles y límites | [Leer](#seguridad) |
-| Actividades | Prácticas relacionadas | [Leer](#actividades) |
-| Evidencias | Capturas y diagramas pendientes | [Leer](#evidencias) |
-| Fuentes | Referencias y registro de investigación | [Leer](#fuentes) |
+1. [Fundamentos](#fundamentos)
+2. [Resolución](#resolución)
+3. [Registros](#registros)
+4. [Roles de servidores](#roles-de-servidores)
+5. [DNS en el proyecto](#dns-en-el-proyecto)
+6. [Seguridad](#seguridad)
+7. [Actividades](#actividades)
+8. [Evidencias](#evidencias)
+9. [Fuentes](#fuentes)
 
 ## Fundamentos
 
