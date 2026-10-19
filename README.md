@@ -28,31 +28,13 @@ La infraestructura incluirá una red de gestión aislada y una DMZ para el hosti
 4. Monitorización, notarización blockchain y automatización.
 5. Simulación controlada de ataques, validación y documentación final.
 
-## Aplicativos previstos
-
-- Proxmox VE
-- ISC-DHCP
-- Pi-hole
-- iptables
-- Nginx
-- MySQL
-- HTML y CSS
-- Wazuh Server y Agents
-- Suricata IDS
-- Prometheus
-- Grafana
-- Python y Bash
-- Web3
-- Ethereum Testnet
-
 ## Estructura del repositorio
 
-| Apartado | Tipo de contenido | Qué encontrarás | Acceso |
-|---|---|---|---|
-| Contexto del proyecto | Presentación y objetivos | Objetivo principal, problema que resuelve y alcance | [Ver contexto](./01-contexto/README.md) |
-| Investigaciones | Documentación técnica | DNS, DHCP, SOC, seguridad y blockchain | [Ver investigaciones](./02-investigacion/README.md) |
-| Aplicativos | Herramientas y tecnologías | Aplicativos previstos y función dentro del proyecto | [Ver aplicativos](./03-aplicativos/README.md) |
-| Equipo | Organización y seguimiento | Integrantes, responsabilidades y avances semanales | [Ver equipo](./04-equipo/README.md) |
+| Apartado | Qué encontrarás | Acceso |
+|---|---|---|
+| Contexto del proyecto | Planteamiento, arquitectura propuesta, alcance y criterios de validación | [Ver contexto](./01-contexto/README.md) |
+| Investigaciones y aplicativos | Documentación técnica, herramientas, funciones y enlaces a sus explicaciones | [Ver investigaciones y aplicativos](./02-investigacion/README.md) |
+| Equipo | Integrantes, responsabilidades y avances semanales | [Ver equipo](./04-equipo/README.md) |
 
 ## Autoría
 
