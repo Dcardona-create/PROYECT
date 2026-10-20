@@ -12,9 +12,10 @@ Estado: en desarrollo. Documento de investigación, no memoria de un despliegue 
 4. [Roles de servidores](#roles-de-servidores)
 5. [DNS en el proyecto](#dns-en-el-proyecto)
 6. [Seguridad](#seguridad)
-7. [Actividades](#actividades)
-8. [Evidencias](#evidencias)
-9. [Fuentes](#fuentes)
+7. [Consulta DNS de ejemplo](#consulta-dns-de-ejemplo)
+8. [Actividades](#actividades)
+9. [Evidencias](#evidencias)
+10. [Fuentes](#fuentes)
 
 ## Fundamentos
 
@@ -83,11 +84,33 @@ El pacto del equipo contempla Pi-hole como componente DNS. Su motor FTL integra 
 
 No se presenta Pi-hole como un mecanismo que garantice privacidad completa o detección de todas las amenazas.
 
+### Criterios para decidir el upstream
+
+El upstream debe elegirse según criterios verificables y no únicamente por preferencia personal:
+
+- Disponibilidad y latencia desde la red del proyecto.
+- Política de privacidad y tratamiento de consultas.
+- Compatibilidad con DNSSEC, si se decide validar registros firmados.
+- Posibilidad de definir un upstream secundario para tolerancia a fallos.
+- Facilidad de monitorización desde Pi-hole y desde el SOC.
+
+La decisión final deberá quedar documentada con la dirección o dominio del upstream, el motivo de elección y una prueba de funcionamiento.
+
 ## Seguridad
 
 ### DNS Tunneling
 
-La actividad ACT1 se utilizará para contextualizar los canales encubiertos sobre DNS. Sus resultados, capturas y conclusiones deben revisarse antes de incorporarlos como evidencia. Queda pendiente añadir una referencia técnica específica y desarrollar los indicadores de detección.
+El DNS tunneling es una técnica que utiliza consultas y respuestas DNS para transportar datos que no pertenecen normalmente al protocolo. Puede emplearse para establecer canales encubiertos, exfiltrar información o comunicarse con infraestructura maliciosa, aprovechando que el tráfico DNS suele estar permitido hacia el exterior.
+
+No todo tráfico DNS anómalo implica un túnel. Para considerarlo indicativo, deben analizarse conjuntamente varios signos:
+
+- Consultas a un mismo dominio con subdominios largos, aleatorios o con codificación inusual.
+- Volumen elevado de consultas TXT, NULL u otros tipos poco habituales para navegación normal.
+- Consultas repetitivas hacia el mismo dominio autoritativo desde un mismo cliente.
+- TTL muy bajos combinados con un patrón constante de consultas.
+- Tráfico DNS desproporcionado respecto al uso normal del equipo.
+
+La actividad ACT1 se utilizará para contextualizar los canales encubiertos sobre DNS. Sus resultados, capturas y conclusiones deben revisarse antes de incorporarlos como evidencia.
 
 ### DNSSEC
 
@@ -100,8 +123,31 @@ DNSSEC aporta autenticación del origen e integridad de los datos DNS. No cifra 
 - Cobertura y límites del filtrado por listas.
 - Análisis de consultas y correlación con eventos del SOC.
 - Validación DNSSEC y límites de protección.
+- Detección de patrones compatibles con DNS tunneling.
 
 Estas medidas son líneas de investigación, no configuraciones ya implantadas.
+
+## Consulta DNS de ejemplo
+
+El siguiente comando permite comprobar qué dirección responde un dominio y qué servidor DNS se utilizó:
+
+```bash
+nslookup example.com
+```
+
+Para consultar directamente a un resolvedor concreto:
+
+```bash
+nslookup example.com 1.1.1.1
+```
+
+Una evidencia válida debe recoger, al menos:
+
+- Dominio consultado.
+- Servidor DNS utilizado.
+- Respuesta obtenida.
+- TTL devuelto, si está disponible.
+- Fecha y hora de la prueba.
 
 ## Actividades
 
@@ -130,6 +176,8 @@ No se insertan enlaces a imágenes inexistentes. Las capturas reales se incorpor
 1. RFC 1034 — Domain names: concepts and facilities: https://www.rfc-editor.org/info/rfc1034/
 2. Pi-hole — DNS resolver / FTL: https://docs.pi-hole.net/ftldns/dns-resolver/
 3. RFC 4033 — DNS Security Introduction and Requirements: https://www.rfc-editor.org/info/rfc4033/
+4. RFC 2181 — Clarifications to the DNS Specification: https://www.rfc-editor.org/info/rfc2181/
+5. Cloudflare — ¿Qué es el DNS?: https://www.cloudflare.com/es-es/learning/dns/what-is-dns/
 
 Contexto del proyecto: Proyecto-pacto-de-socios.docx, aportado por el equipo. Las actividades enlazadas son material propio pendiente de análisis detallado.
 
@@ -137,6 +185,6 @@ Contexto del proyecto: Proyecto-pacto-de-socios.docx, aportado por el equipo. La
 
 | Fecha | Integrante | Tema | Fuente | Conclusión y aplicación al proyecto |
 |---|---|---|---|---|
-| Pendiente | Pendiente | Pendiente | Pendiente | Pendiente |
+| 2026-10-20 | Deivid Cardona | DNS Tunneling, criterios de upstream y consulta DNS | RFC 1034, RFC 4033, documentación de Pi-hole y Cloudflare | Se amplió la investigación con indicadores de detección, criterios técnicos para elegir upstream y método para documentar una consulta DNS real. |
 
 [Volver al índice](#índice-de-contenidos) · [Volver a investigaciones](../README.md)
