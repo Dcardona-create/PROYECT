@@ -21,23 +21,23 @@ Las herramientas, lenguajes y entornos se reúnen aquí para evitar catálogos d
 
 | Aplicativo o tecnología | Qué es | Función prevista | Contexto y explicación |
 |---|---|---|---|
-| Proxmox VE | Plataforma de virtualización | Administrar máquinas virtuales y contenedores | [Leer](./hardening-e-infraestructura/README.md#proxmox-ve) |
-| ISC-DHCP | Servicio de configuración automática de red | Distribuir IP, máscara, puerta de enlace y DNS; adecuación pendiente de revisar | [Leer](./dhcp/README.md#dhcp) |
+| Proxmox VE | Plataforma de virtualización | Administrar máquinas virtuales y contenedores | [Leer](./hardening-e-infraestructura/README.md) |
+| ISC-DHCP | Servicio de configuración automática de red | Distribuir IP, máscara, puerta de enlace y DNS; adecuación pendiente de revisar | [Leer](./dhcp/README.md) |
 | Pi-hole | Componente DNS con filtrado por listas | Resolver nombres y aplicar la política de filtrado definida | [Leer](./dns/README.md#dns-en-el-proyecto) |
-| iptables | Herramienta de filtrado en Linux | Controlar comunicaciones entre redes y servicios | [Leer](./hardening-e-infraestructura/README.md#iptables) |
-| Nginx | Servidor web y posible proxy inverso | Publicar la aplicación y gestionar su acceso | [Leer](./monitorizacion-y-web/README.md#nginx) |
-| MySQL | Sistema de base de datos | Almacenar datos; modelo e integración pendientes | [Contexto de uso](../01-contexto/README.md#servicio-web-como-escenario-de-observación) |
-| HTML | Tecnología de estructura web | Organizar el contenido de la interfaz | [Contexto de uso](../01-contexto/README.md#servicio-web-como-escenario-de-observación) |
-| CSS | Tecnología de presentación web | Definir el aspecto visual de la interfaz | [Contexto de uso](../01-contexto/README.md#servicio-web-como-escenario-de-observación) |
-| Wazuh Server y Agents | Componentes de análisis y recopilación de eventos | Centralizar logs, monitorizar integridad y generar alertas | [Leer](./soc-wazuh-suricata/README.md#wazuh) |
-| Suricata IDS | Detector de intrusiones en red | Analizar tráfico según reglas y visibilidad | [Leer](./soc-wazuh-suricata/README.md#suricata) |
-| Prometheus | Herramienta de métricas | Recopilar y consultar métricas de máquinas y servicios | [Leer](./monitorizacion-y-web/README.md#prometheus) |
-| Grafana | Plataforma de paneles | Visualizar datos de las fuentes conectadas | [Leer](./monitorizacion-y-web/README.md#grafana) |
-| Python | Lenguaje previsto para automatización | Desarrollar tareas e integraciones pendientes de concretar | [Contexto de uso](../01-contexto/README.md#monitorización-del-funcionamiento) |
-| Bash | Lenguaje de scripts | Automatizar tareas de administración pendientes de concretar | [Contexto de uso](../01-contexto/README.md#monitorización-del-funcionamiento) |
-| Web3 | Tecnología de interacción con blockchain | Conectar los componentes con el contrato inteligente | [Contexto de uso](../01-contexto/README.md#trazabilidad-de-eventos-críticos) |
-| Ethereum Testnet | Entorno de pruebas de Ethereum | Probar la notarización sin operar en la red principal con fondos reales | [Leer](./blockchain/README.md#blockchain) |
-| Smart Contract | Programa ejecutado en blockchain | Gestionar pruebas de eventos seleccionados; formato pendiente | [Leer](./blockchain/README.md#contratos-inteligentes) |
+| iptables | Herramienta de filtrado en Linux | Controlar comunicaciones entre redes y servicios | [Leer](./hardening-e-infraestructura/README.md) |
+| Nginx | Servidor web y posible proxy inverso | Publicar la aplicación y gestionar su acceso | [Leer](./monitorizacion-y-web/README.md) |
+| MySQL | Sistema de base de datos | Almacenar datos; modelo e integración pendientes | [Contexto de uso](./mysql/README.md) |
+| HTML | Tecnología de estructura web | Organizar el contenido de la interfaz | [Contexto de uso](./html/README.md) |
+| CSS | Tecnología de presentación web | Definir el aspecto visual de la interfaz | [Contexto de uso](./css/README.md) |
+| Wazuh Server y Agents | Componentes de análisis y recopilación de eventos | Centralizar logs, monitorizar integridad y generar alertas | [Leer](./soc-wazuh-suricata/README.md) |
+| Suricata IDS | Detector de intrusiones en red | Analizar tráfico según reglas y visibilidad | [Leer](./soc-wazuh-suricata/README.md) |
+| Prometheus | Herramienta de métricas | Recopilar y consultar métricas de máquinas y servicios | [Leer](./monitorizacion-y-web/README.md) |
+| Grafana | Plataforma de paneles | Visualizar datos de las fuentes conectadas | [Leer](./monitorizacion-y-web/README.md) |
+| Python | Lenguaje previsto para automatización | Desarrollar tareas e integraciones pendientes de concretar | [Contexto de uso](./python/README.md) |
+| Bash | Lenguaje de scripts | Automatizar tareas de administración pendientes de concretar | [Contexto de uso](./bash/README.md) |
+| Web3 | Tecnología de interacción con blockchain | Conectar los componentes con el contrato inteligente | [Contexto de uso](./web3/README.md) |
+| Ethereum Testnet | Entorno de pruebas de Ethereum | Probar la notarización sin operar en la red principal con fondos reales | [Leer](./blockchain/README.md) |
+| Smart Contract | Programa ejecutado en blockchain | Gestionar pruebas de eventos seleccionados; formato pendiente | [Leer](./blockchain/README.md) |
 
 ## Recursos de apoyo al hardening
 
@@ -46,9 +46,9 @@ Su aplicación concreta sigue pendiente de definición. No se presentan como com
 | Recurso | Contexto previsto | Acceso |
 |---|---|---|
 | PowerShell | Conocimiento del equipo para administración y automatización; alcance pendiente | Sin investigación específica todavía |
-| Lynis | Estudio de auditorías de seguridad de sistemas | [Leer](./hardening-e-infraestructura/README.md#hardening) |
-| Docker Bench | Estudio de seguridad en contenedores | [Leer](./hardening-e-infraestructura/README.md#hardening) |
-| CIS e INCIBE | Guías y recursos para reforzar sistemas; no son aplicativos | [Leer](./hardening-e-infraestructura/README.md#hardening) |
+| Lynis | Estudio de auditorías de seguridad de sistemas | [Leer](./hardening-e-infraestructura/README.md) |
+| Docker Bench | Estudio de seguridad en contenedores | [Leer](./hardening-e-infraestructura/README.md) |
+| CIS e INCIBE | Guías y recursos para reforzar sistemas; no son aplicativos | [Leer](./hardening-e-infraestructura/README.md) |
 
 Las versiones, requisitos, integraciones, testnet, mecanismo de notarización y fuentes oficiales verificadas se completarán durante la investigación. El componente de servidor que conectará la aplicación con MySQL sigue pendiente de decisión. Un enlace de contexto no equivale a una investigación individual terminada.
 
