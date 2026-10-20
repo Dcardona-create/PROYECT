@@ -16,7 +16,9 @@ La propuesta une tres líneas de trabajo: separar los servicios expuestos de los
 6. [Desarrollo y criterios de validación](#desarrollo-y-criterios-de-validación)
 7. [Estado y documentación relacionada](#estado-y-documentación-relacionada)
 
-[Investigaciones y aplicativos](./02-investigacion/README.md) · [Equipo y seguimiento](./04-equipo/README.md)
+## [Investigaciones y aplicativos](./02-investigacion/README.md)
+
+## [Equipo y seguimiento](./04-equipo/README.md)
 
 ## Necesidad que aborda
 
