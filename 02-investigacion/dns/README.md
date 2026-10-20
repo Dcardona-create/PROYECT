@@ -1,6 +1,6 @@
 # Investigación: DNS
 
-Estado: en desarrollo. Documento de investigación, no memoria de un despliegue completado.
+Estado: documento de investigación teórica. No describe un despliegue realizado ni exige instalar Pi-hole.
 
 [Volver al cuadro de investigaciones](../README.md) · [Volver a la portada](../../README.md)
 
@@ -14,8 +14,7 @@ Estado: en desarrollo. Documento de investigación, no memoria de un despliegue 
 6. [Seguridad](#seguridad)
 7. [Consulta DNS de ejemplo](#consulta-dns-de-ejemplo)
 8. [Actividades](#actividades)
-9. [Evidencias](#evidencias)
-10. [Fuentes](#fuentes)
+9. [Fuentes](#fuentes)
 
 ## Fundamentos
 
@@ -43,7 +42,7 @@ Cliente → DNS configurado / Pi-hole → upstream recursivo
                                   raíz → TLD → autoritativo
 ```
 
-Este esquema explica roles; no representa todavía la topología definitiva del laboratorio.
+Este esquema explica roles; no representa una instalación realizada.
 
 ## Registros
 
@@ -71,22 +70,15 @@ La especificación base describe los registros y la organización del sistema; l
 
 ## DNS en el proyecto
 
-El pacto del equipo contempla Pi-hole como componente DNS. Su motor FTL integra funcionalidad basada en dnsmasq [2]. La arquitectura concreta debe documentar cómo se resolverán los nombres internos y a qué upstream se enviarán las consultas externas.
+El pacto del equipo contempla Pi-hole como componente DNS. Su motor FTL integra funcionalidad basada en dnsmasq [2]. En esta investigación se estudia su posible función como servicio DNS local y reenviador hacia un upstream recursivo, sin presentar una configuración implantada.
 
-### Decisiones pendientes
-
-- Ubicación de Pi-hole y equipos que podrán consultarlo.
-- Direcciones IP, dominio interno y registros locales: pendientes, no inventados.
-- Resolver upstream elegido y justificación.
-- Listas y política de filtrado, excepciones y mantenimiento.
-- Retención y acceso a los registros de consultas.
-- Integración con la monitorización y el SOC: pendiente de diseñar y validar.
+Pi-hole no está instalado. La definición de direcciones IP, dominio interno, ubicación del servicio y configuración concreta queda fuera del alcance de este documento teórico.
 
 No se presenta Pi-hole como un mecanismo que garantice privacidad completa o detección de todas las amenazas.
 
 ### Criterios para decidir el upstream
 
-El upstream debe elegirse según criterios verificables y no únicamente por preferencia personal:
+Como criterios teóricos para una posible elección se consideran:
 
 - Disponibilidad y latencia desde la red del proyecto.
 - Política de privacidad y tratamiento de consultas.
@@ -94,7 +86,7 @@ El upstream debe elegirse según criterios verificables y no únicamente por pre
 - Posibilidad de definir un upstream secundario para tolerancia a fallos.
 - Facilidad de monitorización desde Pi-hole y desde el SOC.
 
-La decisión final deberá quedar documentada con la dirección o dominio del upstream, el motivo de elección y una prueba de funcionamiento.
+Estos criterios no implican que se haya seleccionado o configurado un upstream.
 
 ## Seguridad
 
@@ -110,13 +102,13 @@ No todo tráfico DNS anómalo implica un túnel. Para considerarlo indicativo, d
 - TTL muy bajos combinados con un patrón constante de consultas.
 - Tráfico DNS desproporcionado respecto al uso normal del equipo.
 
-La actividad ACT1 se utilizará para contextualizar los canales encubiertos sobre DNS. Sus resultados, capturas y conclusiones deben revisarse antes de incorporarlos como evidencia.
+ACT1 se enlaza como material de aprendizaje relacionado con los canales encubiertos sobre DNS, no como evidencia obligatoria de un despliegue del proyecto.
 
 ### DNSSEC
 
 DNSSEC aporta autenticación del origen e integridad de los datos DNS. No cifra las consultas ni proporciona confidencialidad [3]. No equivale a filtrado de dominios ni demuestra por sí solo que un dominio sea benigno.
 
-### Controles que se investigarán
+### Controles de seguridad considerados
 
 - Uso del DNS autorizado y política para consultas externas.
 - Actualizaciones, permisos de administración y segmentación.
@@ -125,9 +117,11 @@ DNSSEC aporta autenticación del origen e integridad de los datos DNS. No cifra 
 - Validación DNSSEC y límites de protección.
 - Detección de patrones compatibles con DNS tunneling.
 
-Estas medidas son líneas de investigación, no configuraciones ya implantadas.
+Estos controles se presentan como conceptos de investigación, no como configuraciones implantadas ni tareas prácticas exigidas.
 
 ## Consulta DNS de ejemplo
+
+Los siguientes comandos son ejemplos de consulta, no resultados de pruebas realizadas ni actividades obligatorias.
 
 El siguiente comando permite comprobar qué dirección responde un dominio y qué servidor DNS se utilizó:
 
@@ -141,14 +135,6 @@ Para consultar directamente a un resolvedor concreto:
 nslookup example.com 1.1.1.1
 ```
 
-Una evidencia válida debe recoger, al menos:
-
-- Dominio consultado.
-- Servidor DNS utilizado.
-- Respuesta obtenida.
-- TTL devuelto, si está disponible.
-- Fecha y hora de la prueba.
-
 ## Actividades
 
 | Actividad | Relación con la investigación | Acceso |
@@ -158,18 +144,7 @@ Una evidencia válida debe recoger, al menos:
 | ACT3 — BIND9 | Contexto de instalación y configuración de un servicio DNS | [Ver actividad](https://github.com/Dcardona-create/Actividades-ASIXII/tree/main/ACT3-instalacion-bind9) |
 | ACT4 — DNS secundario | Contexto de servidores y zonas | [Ver actividad](https://github.com/Dcardona-create/Actividades-ASIXII/tree/main/ACT4-dns-esclavo) |
 
-Las prácticas de BIND9 son material de aprendizaje: no implican sustituir la decisión de utilizar Pi-hole en el proyecto.
-
-## Evidencias
-
-| Evidencia prevista | Qué deberá mostrar | Estado |
-|---|---|---|
-| Diagrama de resolución | Cliente, Pi-hole, upstream y jerarquía DNS | Pendiente |
-| Consulta DNS real | Pregunta, respuesta, servidor consultado y TTL | Pendiente |
-| Panel de Pi-hole | Consulta permitida o bloqueada y explicación del resultado | Pendiente |
-| Evidencia de ACT1 | Observación de la práctica y limitaciones | Pendiente de revisar |
-
-No se insertan enlaces a imágenes inexistentes. Las capturas reales se incorporarán tras revisarlas y ocultar los datos sensibles.
+Estas actividades se enlazan como material de aprendizaje. No constituyen evidencias obligatorias ni acreditan una instalación del proyecto. Las prácticas de BIND9 no implican sustituir la decisión de utilizar Pi-hole en el proyecto.
 
 ## Fuentes
 
@@ -185,6 +160,6 @@ Contexto del proyecto: Proyecto-pacto-de-socios.docx, aportado por el equipo. La
 
 | Fecha | Integrante | Tema | Fuente | Conclusión y aplicación al proyecto |
 |---|---|---|---|---|
-| 2026-10-20 | Deivid Cardona | DNS Tunneling, criterios de upstream y consulta DNS | RFC 1034, RFC 4033, documentación de Pi-hole y Cloudflare | Se amplió la investigación con indicadores de detección, criterios técnicos para elegir upstream y método para documentar una consulta DNS real. |
+| 2026-10-20 | Deivid Cardona | DNS Tunneling, criterios de upstream y consulta DNS | RFC 1034, RFC 4033, documentación de Pi-hole y Cloudflare | Se amplió el contenido teórico y se ajustó el alcance para no exigir instalación, capturas ni pruebas no solicitadas. |
 
 [Volver al índice](#índice-de-contenidos) · [Volver a investigaciones](../README.md)
