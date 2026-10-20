@@ -52,4 +52,4 @@ Su aplicación concreta sigue pendiente de definición. No se presentan como com
 
 Las versiones, requisitos, integraciones, testnet, mecanismo de notarización y fuentes oficiales verificadas se completarán durante la investigación. El componente de servidor que conectará la aplicación con MySQL sigue pendiente de decisión. Un enlace de contexto no equivale a una investigación individual terminada.
 
-[Contexto del proyecto](../01-contexto/README.md) · [Volver a la portada](../README.md)
+[Contexto del proyecto](../README.md) · [Volver a la portada](../README.md)
