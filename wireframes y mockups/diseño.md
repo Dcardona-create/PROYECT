@@ -5,7 +5,7 @@
 Este documento recoge el avance del diseño de la interfaz de la aplicación web del proyecto **SecChain SOC Solutions**. Se irá actualizando conforme se complete el prototipo en Figma.
 
 **Herramienta de diseño:** Figma  
-**Enlace al prototipo:** *(pendiente de añadir)*  
+**Enlace al prototipo:** [Diseño wireframes y mockups — Figma Sites](https://www.figma.com/site/c4LcawrwLIGvA8g66faJZs/dise%C3%B1o-wireframes-y-mockups?node-id=0-1&p=f&t=kzL2FbanRVt3c7hY-0)  
 **Última actualización:** 21/10/2026
 
 ## Objetivo
@@ -237,3 +237,4 @@ Inicio
 | Fecha | Avance | Responsable |
 |---|---|---|
 | 21/10/2026 | Creación del documento inicial de wireframes y mockups | Deivid Cardona |
+| 21/10/2026 | Añadido el enlace del prototipo de Figma Sites | Deivid Cardona |
