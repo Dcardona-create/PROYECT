@@ -1,8 +1,8 @@
-# Contexto del proyecto — SecChain SOC Solutions
+# Contexto del proyecto — HOSTLOCK
 
 ## Presentación
 
-SecChain SOC Solutions es un proyecto de infraestructura y ciberseguridad que propone construir un laboratorio virtualizado para proteger servicios web, observar su funcionamiento y analizar los incidentes que se produzcan durante pruebas controladas. Su propósito no es instalar herramientas de forma aislada, sino relacionar la configuración de la red, la supervisión de los sistemas y la conservación de evidencias dentro de un mismo escenario.
+HOSTLOCK es un proyecto de infraestructura y ciberseguridad que propone construir un laboratorio virtualizado para proteger servicios web, observar su funcionamiento y analizar los incidentes que se produzcan durante pruebas controladas. Su propósito no es instalar herramientas de forma aislada, sino relacionar la configuración de la red, la supervisión de los sistemas y la conservación de evidencias dentro de un mismo escenario.
 
 La propuesta une tres líneas de trabajo: separar los servicios expuestos de los recursos de administración, centralizar la detección y el análisis mediante un centro de operaciones de seguridad —SOC— y estudiar la notarización de eventos críticos en una red de pruebas de Ethereum. El resultado esperado es una demostración técnica documentada, no un servicio de seguridad en producción ni una garantía de protección absoluta.
 

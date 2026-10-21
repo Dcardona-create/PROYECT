@@ -1,6 +1,6 @@
 # Investigaciones y aplicativos del proyecto
 
-Documentación técnica de SecChain SOC Solutions. DNS es la investigación activa; los demás temas son borradores. Las herramientas indicadas son tecnologías previstas, no despliegues completados.
+Documentación técnica de HOSTLOCK. DNS es la investigación activa; los demás temas son borradores. Las herramientas indicadas son tecnologías previstas, no despliegues completados.
 
 ## Cuadro de investigaciones
 

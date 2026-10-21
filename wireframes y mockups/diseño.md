@@ -2,7 +2,7 @@
 
 ## Estado del apartado
 
-Este documento recoge el avance del diseño de la interfaz de la aplicación web del proyecto **SecChain SOC Solutions**. Se irá actualizando conforme se complete el prototipo en Figma.
+Este documento recoge el avance del diseño de la interfaz de la aplicación web del proyecto **HOSTLOCK**. Se irá actualizando conforme se complete el prototipo en Figma.
 
 **Herramienta de diseño:** Figma  
 **Enlace al prototipo:** [Diseño wireframes y mockups — Figma Sites](https://www.figma.com/site/c4LcawrwLIGvA8g66faJZs/dise%C3%B1o-wireframes-y-mockups?node-id=0-1&p=f&t=kzL2FbanRVt3c7hY-0)  

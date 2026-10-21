@@ -4,7 +4,7 @@
 
 ## Integrantes y roles
 
-Equipo: SecChain SOC Solutions.
+Equipo: HOSTLOCK.
 
 | Integrante | Rol de aula | Función |
 |---|---|---|
