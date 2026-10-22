@@ -4,15 +4,15 @@ Equipo: Deivid Arley Cardona Pérez, Luis Alberto Rodríguez Aguilar y Pau Toled
 
 [Volver a la portada del proyecto](../README.md) · [Ver diseño de referencia en Figma](https://www.figma.com/design/lSyFDomQELzVXsKalm0OQp/)
 
-## Objetivo y alcance
+## Objetivo y organización
 
-Definir la interfaz de HOSTLOCK, las funciones de sus elementos, la navegación y los datos visibles según el perfil. Figma actúa como referencia visual de la futura web; las capturas no representan una aplicación implementada.
+El diseño de HOSTLOCK organiza la presentación del proyecto, el acceso de los usuarios y la consulta del estado de los servicios. Este documento describe la estructura de las pantallas y el comportamiento definido para su navegación.
 
-El diseño comprende Inicio, Servicios, Acceso, Panel general y Monitorización. No requiere páginas independientes de administración, incidentes o evidencias en esta entrega.
+La interfaz se distribuye en cinco pantallas: Inicio, Servicios, Acceso, Panel general y Monitorización. Inicio y Servicios forman la zona pública. Acceso conecta esa zona con el panel correspondiente a cada perfil. Desde el panel, administrador y analista SOC pueden consultar Monitorización y regresar al resumen.
 
 ## Colores y tipografía
 
-Se conserva la identidad verde utilizada en Figma. La siguiente paleta toma los rellenos del mockup de Monitorización como referencia:
+La identidad visual utiliza una paleta de verdes para relacionar las pantallas y distinguir navegación, contenido e información secundaria. La siguiente paleta toma los rellenos del mockup de Monitorización como referencia:
 
 | Color | HEX | Aplicación |
 |---|---|---|
@@ -23,16 +23,7 @@ Se conserva la identidad verde utilizada en Figma. La siguiente paleta toma los 
 | Negro | #000000 | Texto e iconos sobre fondos claros. |
 | Blanco | #FFFFFF | Textos destacados sobre fondos verdes. |
 
-La paleta relaciona visualmente las pantallas y distingue navegación, contenido e información secundaria. Los degradados y transparencias producen variaciones sobre los colores base; las imágenes conservan sus propios tonos. Inter se utiliza en las etiquetas de Monitorización e Idiqlat en la marca y el pie de esa pantalla. Esta descripción no supone una evaluación formal de accesibilidad.
-
-## Funcionalidades
-
-- Presentación pública de HOSTLOCK y sus áreas de trabajo.
-- Acceso previsto mediante usuario y contraseña.
-- Consulta del Panel general según el perfil.
-- Monitorización detallada para administrador y analista SOC.
-- Resumen de servicios para usuario básico.
-- Cierre de sesión y regreso a Acceso.
+Los degradados y transparencias producen variaciones sobre los colores base; las imágenes conservan sus propios tonos. Inter se utiliza en las etiquetas de Monitorización e Idiqlat en la marca y el pie de esa pantalla.
 
 ## Mapa del sitio
 
@@ -42,24 +33,26 @@ Inicio
 └── Acceso
     ├── Administrador / Analista SOC
     │   └── Panel general completo
-    │       ├── Monitorización
+    │       ├── Monitorización → Panel general
     │       └── Cerrar sesión → Acceso
     └── Usuario básico
         └── Panel general resumido
             └── Cerrar sesión → Acceso
 ```
 
-## Perfiles
+## Perfiles y acceso a la información
 
-| Perfil | Información visible y acceso previsto |
-|---|---|
-| Administrador | Panel completo y Monitorización detallada. |
-| Analista SOC | Los mismos datos de consulta, sin funciones de administración. |
-| Usuario básico | Estado general de los servicios, sin gráficos detallados ni métricas de CPU, RAM, disco o red y sin acceso a Monitorización. |
+| Perfil | Vista del panel | Navegación |
+|---|---|---|
+| Administrador | Servicios, alertas, tráfico de red y uso de recursos. | Panel general, Monitorización y Cerrar sesión. |
+| Analista SOC | Los mismos datos de consulta del panel completo, con un rol centrado en el análisis. | Panel general, Monitorización y Cerrar sesión. |
+| Usuario básico | Resumen del estado general de los servicios. | Panel resumido y Cerrar sesión. |
 
-Administrador y analista comparten la vista de consulta, con el rol identificado. La vista resumida es una variante del Panel general, no otra página.
+Administrador y analista comparten la vista de consulta, con su rol identificado. El usuario básico dispone de una variante resumida del Panel general. Las métricas detalladas de CPU, RAM, disco y red corresponden a la vista de Monitorización de administrador y analista.
 
 ## Boceto inicial
+
+El boceto en papel recoge la primera distribución visual del diseño y sirve como referencia para organizar las pantallas.
 
 ![Boceto inicial de HOSTLOCK en papel](./evidencias/foto.png)
 
@@ -71,17 +64,18 @@ Administrador y analista comparten la vista de consulta, con el rol identificado
 
 ### 1. Inicio
 
-Presentación prevista de HOSTLOCK. Permite ir a Servicios para conocer las áreas del proyecto y a Acceso para entrar en la zona privada.
+Inicio presenta HOSTLOCK y constituye el punto de entrada a la zona pública. Desde esta pantalla, el visitante puede conocer las áreas del proyecto mediante Servicios o dirigirse a Acceso para entrar en la zona privada.
 
-#### Wireframe
-
-#### Mockup
+| Opción | Destino o función en el diseño |
+|---|---|
+| Servicios | Abrir la presentación de las tres áreas del proyecto. |
+| Acceso | Abrir el formulario de usuario y contraseña. |
 
 ### 2. Servicios
 
 ![Mockup de Servicios en escritorio](./evidencias/mockup-servicios-escritorio.jpg)
 
-La pantalla pública presenta HOSTLOCK y tres tarjetas: Infraestructura, Ciberseguridad y Evidencias. Todos los visitantes ven la misma información, sin registros privados.
+Servicios presenta las tres áreas de HOSTLOCK mediante tarjetas informativas. El contenido es común para todos los visitantes.
 
 | Tarjeta | Texto visible |
 |---|---|
@@ -89,79 +83,103 @@ La pantalla pública presenta HOSTLOCK y tres tarjetas: Infraestructura, Ciberse
 | Ciberseguridad | Supervisión de sistemas y análisis de eventos del laboratorio. |
 | Evidencias | Estudio de la trazabilidad y la integridad de registros seleccionados. |
 
-La cabecera muestra el lema «Infraestructura y ciberseguridad en un mismo entorno». La presentación describe el laboratorio académico y el pie identifica el proyecto ASIX.
+La cabecera incorpora HOSTLOCK y el lema «Infraestructura y ciberseguridad en un mismo entorno». El pie identifica el proyecto académico ASIX.
 
-Las tarjetas son informativas, no botones. Inicio vuelve a la presentación; Servicios identifica esta sección; Acceso abre el formulario; el menú permite mostrar u ocultar la navegación. El elemento «Explorar el proyecto» que permanece en la referencia gráfica no forma parte del funcionamiento acordado.
+| Opción | Destino o función en el diseño |
+|---|---|
+| Inicio | Volver a la presentación del proyecto. |
+| Servicios | Identificar la sección actual. |
+| Acceso | Abrir el formulario de entrada. |
+| Menú | Mostrar u ocultar las opciones de navegación. |
 
-#### Wireframe
+Las tarjetas se utilizan para leer la descripción de cada área. El recorrido entre pantallas se realiza mediante la navegación de la cabecera.
 
 ### 3. Acceso
 
 ![Mockup de Acceso en escritorio](./evidencias/mockup-acceso-escritorio.jpg)
 
-La referencia representa dos campos sobre un icono de usuario. En la web, el primero corresponde a Usuario y el segundo a Contraseña. El usuario escrito será visible y la contraseña se mostrará oculta. La acción Entrar comprobará las credenciales y conducirá al panel según el perfil. Un error mantendrá el formulario con un aviso; volver a Inicio permitirá salir del acceso.
+Acceso reúne los campos Usuario y Contraseña. El nombre de usuario se muestra en texto y la contraseña se oculta durante la escritura. Los tres perfiles comparten el mismo formulario.
 
-La captura es una guía de composición: las etiquetas y la acción de entrada se definen aquí sin afirmar que ya aparezcan completas en la imagen. Los tres perfiles utilizan el mismo formulario.
+El flujo de entrada definido consiste en introducir las credenciales y seleccionar Entrar. Las credenciales correctas conducen al Panel general correspondiente al perfil. Ante credenciales incorrectas, el flujo mantiene el formulario y muestra un aviso para corregir los datos.
 
-#### Wireframe
+| Elemento | Función en el diseño |
+|---|---|
+| Usuario | Introducir el identificador de la cuenta. |
+| Contraseña | Introducir la clave con los caracteres ocultos. |
+| Entrar | Solicitar el acceso al panel correspondiente al perfil. |
+| Inicio | Regresar a la zona pública. |
 
 ### 4. Panel general
 
 ![Mockup del Panel general en escritorio](./evidencias/mockup-panel-general-escritorio.jpg)
 
-La vista de referencia muestra HOSTLOCK, navegación lateral, servicios activos, alertas activas, última actualización y Mi perfil. El área central representa Tráfico de red, Alertas por día y Uso de recursos.
+El Panel general concentra el resumen de los servicios y la información de supervisión. La composición combina cabecera HOSTLOCK, navegación lateral e indicadores centrales.
 
-| Información | Función prevista |
+| Información | Función en el diseño |
 |---|---|
 | Servicios activos | Resumir los servicios disponibles. |
 | Alertas activas | Resumir los avisos de seguridad. |
-| Última actualización | Indicar el momento de actualización de los datos. |
+| Última actualización | Identificar el momento de actualización de la información. |
 | Tráfico de red | Representar la evolución de las comunicaciones. |
-| Alertas por día | Representar el número de alertas por fecha. |
+| Alertas por día | Representar la distribución de alertas por fecha. |
 | Uso de recursos | Representar la utilización de recursos del equipo. |
-| Mi perfil | Identificar al usuario y su rol dentro del panel, sin otra página. |
+| Mi perfil | Identificar al usuario y su rol dentro del panel. |
 
-Administrador y analista ven esta consulta completa. El usuario básico dispone de una variante resumida con el estado general de los servicios y Cerrar sesión, sin gráficos detallados ni acceso a Monitorización.
+Administrador y analista consultan la vista completa. Desde ella, Monitorización conduce al detalle del equipo y Panel general permite volver al resumen. Cerrar sesión devuelve al formulario de Acceso.
 
-La navegación funcional de esta entrega se limita a Panel general, Monitorización para los perfiles autorizados y Cerrar sesión hacia Acceso. Las etiquetas de Usuarios, Configuración, Incidentes y Evidencias de la referencia visual no implican pantallas ni acciones implementadas dentro del alcance acordado. Los gráficos son ilustrativos.
+La navegación descrita se centra en estas cinco pantallas. Los resúmenes de servicios y alertas se consultan dentro del propio panel.
 
-#### Wireframe
+#### Vista del usuario básico
 
-#### Vista resumida del usuario básico
+La variante resumida presenta el estado general de los servicios para una consulta sencilla. Su recorrido conecta Acceso con el Panel resumido y termina en Cerrar sesión, que devuelve a Acceso. El detalle de recursos se concentra en la vista de los perfiles técnicos.
 
 ### 5. Monitorización
 
 ![Mockup de Monitorización en escritorio](./evidencias/mockup-monitorizacion-escritorio.jpg)
 
-La pantalla presenta tres bloques: Estado del servidor, Tráfico de red y Rendimiento del servicio. Las imágenes representan el tipo de información a consultar, no mediciones reales del laboratorio.
+Monitorización agrupa tres bloques: Estado del servidor, Tráfico de red y Rendimiento del servicio. Los gráficos y cifras de las capturas son datos de demostración que ilustran la presentación de los indicadores.
 
-| Elemento | Funcionamiento previsto |
+| Elemento | Destino o función en el diseño |
 |---|---|
-| Panel general | Volver al resumen del panel. |
+| Panel general | Regresar al resumen de servicios e indicadores. |
 | Monitorización | Identificar la pantalla actual. |
-| CPU | Información sobre utilización del procesador. |
-| Memoria RAM | Información sobre utilización de memoria. |
-| Disco | Información sobre ocupación del almacenamiento. |
-| Red | Información sobre tráfico de comunicaciones. |
+| CPU | Identificar la información sobre utilización del procesador. |
+| Memoria RAM | Identificar la información sobre utilización de memoria. |
+| Disco | Identificar la información sobre ocupación del almacenamiento. |
+| Red | Identificar la información sobre tráfico de comunicaciones. |
 | Cerrar sesión | Regresar a Acceso. |
 
-CPU, Memoria RAM, Disco y Red son etiquetas informativas, no botones. No abren otras pantallas. La franja inferior identifica Servidor web, Última actualización: — y Datos de demostración. El pie identifica HOSTLOCK como proyecto académico ASIX.
+CPU, Memoria RAM, Disco y Red son etiquetas informativas. Los cambios de pantalla se realizan con Panel general y Cerrar sesión.
 
-Administrador y analista pueden consultar Monitorización; el usuario básico no dispone de este acceso detallado.
+La franja inferior identifica el equipo Servidor web, la última actualización y el carácter demostrativo de los datos. El pie muestra «HOSTLOCK · Proyecto académico ASIX».
 
-#### Wireframe
+## Navegabilidad
 
-## Navegabilidad y pruebas previstas
+La navegación conecta la consulta pública con el acceso privado y adapta la información al perfil del usuario. Cada pantalla tiene una función concreta y un recorrido de salida: volver a Inicio desde la zona pública, regresar al Panel general desde Monitorización o cerrar la sesión para volver a Acceso.
 
-La navegación se define mediante nombres consistentes, regreso al panel y visibilidad según el perfil. Las siguientes comprobaciones son propuestas para demostrar el funcionamiento esperado, no pruebas ejecutadas de una aplicación real.
+### Recorrido público
 
-| Escenario | Recorrido o acción | Resultado esperado |
-|---|---|---|
-| Visitante | Inicio → Servicios → Acceso. | Consulta los tres bloques públicos y llega al formulario sin ver datos internos. |
-| Administrador | Acceso → Panel completo → Monitorización → Panel → Cerrar sesión. | Consulta los indicadores y regresa a Acceso. |
-| Analista SOC | Acceso → Panel completo → Monitorización → Cerrar sesión. | Consulta datos operativos sin funciones de administración. |
-| Usuario básico | Acceso → Panel resumido → Cerrar sesión. | Solo ve estado general, sin métricas detalladas ni acceso a Monitorización. |
-| Error de acceso | Introducir credenciales incorrectas y pulsar Entrar. | Permanece en Acceso y recibe un aviso de error. |
+1. El visitante entra en Inicio y conoce la presentación de HOSTLOCK.
+2. Selecciona Servicios para consultar Infraestructura, Ciberseguridad y Evidencias.
+3. Puede regresar a Inicio o seleccionar Acceso para abrir el formulario.
+
+### Recorrido de administrador y analista SOC
+
+1. El usuario introduce sus credenciales en Acceso.
+2. Entrar conduce al Panel general completo según su perfil.
+3. Desde el panel, selecciona Monitorización para consultar el detalle del equipo.
+4. Panel general permite regresar al resumen.
+5. Cerrar sesión finaliza el recorrido y devuelve a Acceso.
+
+### Recorrido del usuario básico
+
+1. El usuario entra mediante el formulario de Acceso.
+2. Consulta el estado de los servicios en el Panel general resumido.
+3. Selecciona Cerrar sesión para regresar a Acceso.
+
+### Tratamiento del error de acceso
+
+Si las credenciales son incorrectas, el flujo permanece en Acceso y presenta un aviso. El usuario puede corregir los campos y volver a seleccionar Entrar, o regresar a Inicio.
 
 ## Evidencias
 
