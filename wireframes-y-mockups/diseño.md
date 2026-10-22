@@ -61,6 +61,10 @@ Administrador y analista comparten la vista de consulta, con el rol identificado
 
 ## Boceto inicial
 
+![Boceto inicial de HOSTLOCK en papel](./evidencias/foto.png)
+
+[Ver la fotografía del boceto en tamaño completo](./evidencias/foto.png)
+
 [Archivo aportado: Hostlock — papel (HTML)](./evidencias/Hostlock-%20papel.html)
 
 ## Pantallas y funcionamiento
