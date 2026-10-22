@@ -16,7 +16,7 @@ La propuesta une tres líneas de trabajo: separar los servicios expuestos de los
 6. [Desarrollo y criterios de validación](#desarrollo-y-criterios-de-validación)
 7. [Estado y documentación relacionada](#estado-y-documentación-relacionada)
 
-| [Investigaciones y aplicativos](./02-investigacion/README.md) | [Equipo y seguimiento](./04-equipo/README.md) |
+| [Investigaciones y aplicativos](./investigacion/README.md) | [Equipo y seguimiento](./equipo/README.md) |
 |:---:|:---:|
 
 ## Necesidad que aborda
@@ -109,4 +109,4 @@ Se proponen los siguientes criterios para organizar la evaluación, pendientes d
 
 El repositorio se encuentra en fase de investigación y organización documental. Las direcciones de red, versiones, reglas, tecnología de servidor de la aplicación y mecanismo exacto de notarización deben concretarse durante el desarrollo. No se presentan resultados experimentales que todavía no se hayan obtenido.
 
-Este contexto desarrolla el planteamiento recogido en Proyecto-pacto-de-socios.docx y en la documentación actual del repositorio. Los detalles técnicos, fuentes y evidencias se mantienen en [Investigaciones y aplicativos](./02-investigacion/README.md); la autoría, responsabilidades y seguimiento se consultan en [Equipo](./04-equipo/README.md).
+Este contexto desarrolla el planteamiento recogido en Proyecto-pacto-de-socios.docx y en la documentación actual del repositorio. Los detalles técnicos, fuentes y evidencias se mantienen en [Investigaciones y aplicativos](./investigacion/README.md); la autoría, responsabilidades y seguimiento se consultan en [Equipo](./equipo/README.md).
