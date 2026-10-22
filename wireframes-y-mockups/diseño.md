@@ -1,240 +1,167 @@
-# A2 — Wireframes y Mockups / Diseño
+# A2 — Diseño de la interfaz de HOSTLOCK
 
-## Estado del apartado
+## Datos y estado
 
-Este documento recoge el avance del diseño de la interfaz de la aplicación web del proyecto **HOSTLOCK**. Se irá actualizando conforme se complete el prototipo en Figma.
+- Alumno: Deivid Cardona.
+- Módulo: M0379 / Proyecto.
+- Ciclo: ASIX 2.º.
+- Herramienta: Figma.
+- Estado: diseño en desarrollo; no se presentan pruebas como ejecutadas.
+- Actualización: 22/10/2026.
 
-**Herramienta de diseño:** Figma  
-**Enlace al prototipo:** [Diseño wireframes y mockups — Figma Sites](https://www.figma.com/site/c4LcawrwLIGvA8g66faJZs/dise%C3%B1o-wireframes-y-mockups?node-id=0-1&p=f&t=kzL2FbanRVt3c7hY-0)  
-**Última actualización:** 21/10/2026
+## Enlaces de trabajo
 
-## Objetivo
+- [Archivo de Design revisable](https://www.figma.com/design/lSyFDomQELzVXsKalm0OQp/)
+- [Archivo original de Sites](https://www.figma.com/site/c4LcawrwLIGvA8g66faJZs/)
 
-Definir la disposición de los elementos de la interfaz, la navegación entre pantallas y la información visible para cada perfil de usuario. Los wireframes muestran la estructura básica y los mockups incorporan la propuesta visual antes del desarrollo final.
+La revisión documental se basa en la copia de Design y las capturas compartidas. Los cambios posteriores en Sites deben copiarse a Design para que ambos archivos coincidan.
 
-## Mapa del sitio
+## Objetivo y alcance acordado
+
+Definir las funciones, estructura, información visible y navegación de la aplicación mediante bocetos, wireframes y mockups.
+
+La entrega se centra en cinco pantallas: Inicio, Servicios, Acceso, Panel general y Monitorización. Alertas detalladas, gestión de incidentes, evidencias, gestión de usuarios y configuración quedan como ampliaciones futuras, no como pantallas realizadas ni como recorridos exigidos en esta versión.
+
+No es necesario implementar el backend para representar estos recorridos en el prototipo. Los datos ilustrativos no son resultados del laboratorio.
+
+## Mapa del sitio previsto
 
 ```text
 Inicio
-├── Acceso / Login
-├── Panel principal
-│   ├── Estado de servicios
-│   ├── Alertas
-│   ├── Métricas
-│   └── Evidencias
-├── Gestión de incidentes
-│   ├── Detalle de alerta
-│   └── Evidencia asociada
-└── Administración
-    ├── Usuarios
-    └── Configuración
+├── Servicios — público
+└── Acceso
+    └── Panel general — según perfil
+        ├── Monitorización — según perfil
+        └── Cerrar sesión → Acceso
 ```
 
-## Perfiles de usuario
+El mapa describe los destinos previstos. Sus conexiones están pendientes de validación en el prototipo.
 
-| Perfil | Descripción | Accesos previstos |
-|---|---|---|
-| Administrador | Gestiona usuarios, configuración y acceso general | Panel completo, administración, incidentes y evidencias |
-| Analista SOC | Consulta alertas, eventos y evidencias | Panel, alertas, detalle de incidentes y evidencias |
-| Usuario básico | Consulta el estado general del servicio | Panel resumido y estado de servicios |
+## Perfiles confirmados
 
-## Wireframes y mockups
+| Perfil | Alcance de esta entrega |
+|---|---|
+| Administrador | Panel general y monitorización; las funciones de administración avanzada quedan fuera del prototipo mínimo. |
+| Analista SOC | Consulta operativa del panel y monitorización; información exacta pendiente de concretar por pantalla. |
+| Usuario básico | Consulta resumida del estado general; información restringida y diferencias visuales pendientes de concretar. |
+
+No se consideran implementados los permisos. Debe definirse la información exacta de cada perfil antes de cerrar el diseño.
+
+## Boceto inicial
+
+El alumno confirma que dispone de un boceto en papel. Pendiente de incorporar su fotografía o digitalización.
+
+## Pantallas y avance real
 
 ### 1. Inicio
 
-**Wireframe:** *(añadir captura o enlace de Figma)*  
-**Mockup:** *(añadir captura o enlace de Figma)*
+Existe una sección denominada Inicio en Design. Pendiente de revisar sus elementos internos, identificar su wireframe y mockup e incorporar sus capturas.
 
-**Elementos previstos:**
+Función prevista: presentar HOSTLOCK y permitir acceder a Servicios o Acceso.
 
-- Logotipo y nombre del proyecto.
-- Menú principal.
-- Botón de acceso.
-- Breve descripción del servicio.
-- Acceso al panel según el perfil.
+Pendiente: concretar textos visibles, botones y destinos de esta pantalla sin confundirla con Servicios.
 
-**Navegación:**
+### 2. Servicios
 
-- El botón **Acceder** lleva a la pantalla de login.
-- El menú permite ir a las secciones disponibles según el perfil.
+#### Contenido revisado
 
-**Datos visibles:**
+La pantalla presenta HOSTLOCK mediante tres bloques informativos:
 
-- Nombre del proyecto.
-- Estado general del servicio.
-- Opciones de navegación permitidas.
+| Bloque | Texto visible |
+|---|---|
+| Infraestructura | Redes y servicios organizados en un entorno virtualizado. |
+| Ciberseguridad | Supervisión de sistemas y análisis de eventos del laboratorio. |
+| Evidencias | Estudio de la trazabilidad y la integridad de registros seleccionados. |
 
-### 2. Login
+Incluye el lema «Infraestructura y ciberseguridad en un mismo entorno», una presentación del laboratorio académico y el pie «HOSTLOCK · Proyecto académico ASIX».
 
-**Wireframe:** *(añadir captura o enlace de Figma)*  
-**Mockup:** *(añadir captura o enlace de Figma)*
+#### Acceso y navegación
 
-**Elementos previstos:**
+Servicios será público y mostrará el mismo contenido informativo a todos los visitantes, sin datos privados del laboratorio.
 
-- Campo de usuario.
-- Campo de contraseña.
-- Botón de inicio de sesión.
-- Mensaje de error en caso de credenciales incorrectas.
+- Inicio: volver a la pantalla inicial.
+- Servicios: señalar la pantalla actual.
+- Acceso: abrir el formulario de inicio de sesión.
+- Menú: mostrar u ocultar las opciones de navegación.
+- Las tres tarjetas son informativas y no abren pantallas adicionales.
 
-**Navegación:**
+Se acuerda retirar «Explorar el proyecto» para simplificar. Su retirada del diseño todavía no se ha verificado.
 
-- Un inicio de sesión correcto lleva al panel principal.
-- Un error mantiene al usuario en la pantalla de login y muestra un mensaje.
+#### Estado y pendientes
 
-**Datos visibles:**
+- Revisados wireframes Desktop, Tablet y Móvil.
+- Revisados tres mockups con tamaño de escritorio; dos se adaptarán a tablet y móvil.
+- Pendiente separar las opciones de menú en elementos independientes y asignar destinos.
+- En la copia de Design revisada, el mockup no contiene interacciones configuradas. Una tarjeta del wireframe tiene una acción de clic sin destino; debe retirarse al ser informativa.
+- Pendiente revisar legibilidad, incorporar capturas y comprobar navegación.
 
-- Usuario introducido.
-- Mensaje de validación o error.
+### 3. Acceso
 
-### 3. Panel principal
+Existe el apartado de wireframe y UI; las capturas compartidas muestran la composición visual del formulario.
 
-**Wireframe:** *(añadir captura o enlace de Figma)*  
-**Mockup:** *(añadir captura o enlace de Figma)*
+Elementos previstos: título «Iniciar sesión», campo Usuario, campo Contraseña con caracteres ocultos, botón Entrar y mensaje de error.
 
-**Elementos previstos:**
+Recorrido previsto: acceso correcto simulado → Panel general; error simulado → permanecer en Acceso; regreso → Inicio.
 
-- Menú lateral o superior.
-- Resumen del estado de los servicios.
-- Acceso a alertas, métricas y evidencias.
-- Botón de cierre de sesión.
+Pendiente revisar las capas internas, completar etiquetas, representar el error y comprobar conexiones. El prototipo no demuestra autenticación real.
 
-**Navegación:**
+### 4. Panel general
 
-- **Alertas** lleva a la gestión de incidentes.
-- **Métricas** lleva a la vista de monitorización.
-- **Evidencias** lleva al listado de registros conservados.
+Existe el apartado de wireframe y UI. La captura compartida muestra cabecera HOSTLOCK, menú lateral, título del panel, acceso a Mi perfil y gráficos de tráfico de red, alertas por día y uso de recursos.
 
-**Datos visibles:**
+Pendiente:
 
-- Estado general de los servicios.
-- Número de alertas activas.
-- Últimas métricas disponibles.
-- Accesos habilitados según el perfil.
+- Ajustar el menú al alcance mínimo; no dejar enlaces aparentes a pantallas futuras.
+- Completar indicadores superiores.
+- Definir datos, unidades, periodos y equipo representado.
+- Sustituir o explicar etiquetas genéricas de las imágenes de gráficos.
+- Concretar qué ve cada perfil.
+- Mantener Mi perfil solo si se resuelve dentro de las cinco pantallas, sin añadir otra pantalla obligatoria.
 
-### 4. Alertas e incidentes
+Los gráficos actuales son ilustrativos. Mostrar un resumen de alertas no implica disponer de una pantalla de gestión de alertas.
 
-**Wireframe:** *(añadir captura o enlace de Figma)*  
-**Mockup:** *(añadir captura o enlace de Figma)*
+### 5. Monitorización
 
-**Elementos previstos:**
+Existen secciones de wireframe y UI en Design. El alumno confirma que está pendiente completar colores y contenido.
 
-- Listado de alertas.
-- Filtros por fecha, tipo o estado.
-- Botón para abrir el detalle.
-- Indicador del estado de cada alerta.
+Antes de cerrar este apartado se definirán: nombre del equipo o servicio, métricas visibles, unidades, periodo, última actualización y diferencias por perfil.
 
-**Navegación:**
+No se fijan cifras ni se afirma que la monitorización esté implementada. Pendiente revisar su contenido interno cuando se complete y comprobar el regreso al Panel general.
 
-- Al seleccionar una alerta se accede a su detalle.
-- Desde el detalle se puede consultar la evidencia asociada.
+## Pruebas de navegación previstas
 
-**Datos visibles:**
+Estas pruebas son propuestas, no resultados obtenidos. Se ajustarán a los datos y permisos definitivos.
 
-- Fecha y hora de la alerta.
-- Tipo de evento.
-- Estado de la alerta.
-- Servicio o equipo relacionado.
-- Acceso a la evidencia relacionada.
+| Perfil o escenario | Recorrido | Resultado esperado |
+|---|---|---|
+| Visitante | Inicio → Servicios → Acceso | Puede leer los tres bloques y llegar al formulario sin iniciar sesión. |
+| Administrador | Acceso → Panel general → Monitorización → Panel → Cerrar sesión | Recorre las cinco pantallas aplicables y vuelve a Acceso sin enlaces sin destino. |
+| Analista SOC | Acceso → Panel → Monitorización → Panel | Consulta la información operativa acordada, sin opciones de administración fuera del alcance. |
+| Usuario básico | Acceso → Panel resumido → vista permitida de Monitorización → Cerrar sesión | Solo ve información resumida; pendiente concretar y representar esa vista. |
+| Error de acceso | Acceso → Entrar con credenciales de ejemplo incorrectas | Se representa un mensaje de error y no se avanza al panel. |
 
-### 5. Detalle de alerta
+Las conexiones deben simularse en Figma. No se presentan estas pruebas como comprobación de seguridad de una aplicación real.
 
-**Wireframe:** *(añadir captura o enlace de Figma)*  
-**Mockup:** *(añadir captura o enlace de Figma)*
+## Lista de comprobación de A2
 
-**Elementos previstos:**
-
-- Información principal de la alerta.
-- Observaciones relacionadas.
-- Botón para volver al listado.
-- Acceso a la evidencia original.
-
-**Navegación:**
-
-- **Volver** regresa al listado de alertas.
-- **Ver evidencia** abre la pantalla o registro asociado.
-
-**Datos visibles:**
-
-- Descripción del incidente.
-- Fecha y hora.
-- Origen o servicio afectado.
-- Estado de análisis.
-- Evidencia vinculada.
-
-### 6. Evidencias
-
-**Wireframe:** *(añadir captura o enlace de Figma)*  
-**Mockup:** *(añadir captura o enlace de Figma)*
-
-**Elementos previstos:**
-
-- Listado de evidencias.
-- Filtro por fecha o tipo de evento.
-- Botón para consultar el detalle.
-- Indicador de trazabilidad cuando corresponda.
-
-**Navegación:**
-
-- Al seleccionar una evidencia se accede a su detalle.
-- El botón **Volver** regresa al panel o listado anterior.
-
-**Datos visibles:**
-
-- Identificador visible de la evidencia.
-- Fecha y hora.
-- Tipo de registro.
-- Relación con la alerta o prueba.
-- Estado de trazabilidad.
-
-## Pruebas de navegabilidad
-
-### Prueba 1 — Administrador
-
-**Objetivo:** comprobar que el administrador puede acceder, consultar alertas y revisar evidencias.
-
-**Pasos:**
-
-1. Acceder a la pantalla de login.
-2. Iniciar sesión con un usuario administrador.
-3. Entrar en el panel principal.
-4. Abrir la sección de alertas.
-5. Seleccionar una alerta y acceder a su detalle.
-6. Consultar la evidencia asociada.
-7. Volver al panel principal.
-
-**Resultado esperado:** todas las secciones son accesibles y la navegación vuelve correctamente al punto anterior.
-
-### Prueba 2 — Analista SOC
-
-**Objetivo:** comprobar que el analista puede consultar alertas y evidencias sin acceder a la administración.
-
-**Pasos:**
-
-1. Iniciar sesión como analista SOC.
-2. Acceder al panel principal.
-3. Abrir alertas.
-4. Consultar el detalle de una alerta.
-5. Acceder a la evidencia relacionada.
-6. Comprobar que la sección de administración no está disponible.
-
-**Resultado esperado:** el analista puede consultar la información operativa, pero no accede a las opciones de administración.
-
-### Prueba 3 — Usuario básico
-
-**Objetivo:** comprobar que el usuario básico solo visualiza la información permitida.
-
-**Pasos:**
-
-1. Iniciar sesión como usuario básico.
-2. Acceder al panel resumido.
-3. Consultar el estado de los servicios.
-4. Intentar acceder a una sección no permitida.
-
-**Resultado esperado:** el usuario ve únicamente el estado general y no puede acceder a alertas, evidencias ni administración.
+- [x] Herramienta online y enlaces identificados.
+- [x] Alcance de cinco pantallas acordado.
+- [x] Tres perfiles confirmados.
+- [x] Servicios público y tarjetas informativas acordados.
+- [x] Apartados de wireframe y UI localizados para Servicios, Acceso, Panel y Monitorización.
+- [ ] Incorporar el boceto en papel.
+- [ ] Revisar Inicio y el contenido interno de las pantallas restantes.
+- [ ] Completar colores y contenido de Monitorización.
+- [ ] Terminar las adaptaciones de tablet y móvil previstas.
+- [ ] Definir la información exacta visible por pantalla y perfil.
+- [ ] Anotar funciones y destinos de los elementos de navegación.
+- [ ] Configurar y revisar las conexiones del prototipo.
+- [ ] Incorporar capturas identificadas de wireframes y mockups.
+- [ ] Comprobar el acceso del profesor al informe y al prototipo.
 
 ## Registro de avances
 
 | Fecha | Avance | Responsable |
 |---|---|---|
-| 21/10/2026 | Creación del documento inicial de wireframes y mockups | Deivid Cardona |
-| 21/10/2026 | Añadido el enlace del prototipo de Figma Sites | Deivid Cardona |
+| 21/10/2026 | Documento inicial y enlace a Figma Sites. | Deivid Cardona |
+| 22/10/2026 | Copia en Design para revisión; revisión de Servicios y acuerdo de cinco pantallas, tres perfiles y adaptaciones pendientes. | Deivid Cardona |
