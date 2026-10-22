@@ -1,167 +1,154 @@
 # A2 — Diseño de la interfaz de HOSTLOCK
 
-## Datos y estado
+## Datos de la actividad
 
-- Alumno: Deivid Cardona.
-- Módulo: M0379 / Proyecto.
-- Ciclo: ASIX 2.º.
-- Herramienta: Figma.
-- Estado: diseño en desarrollo; no se presentan pruebas como ejecutadas.
-- Actualización: 22/10/2026.
+| Campo | Información |
+|---|---|
+| Alumno | Deivid Cardona |
+| Módulo | M0379 / Proyecto |
+| Ciclo | ASIX 2.º |
+| Herramienta | Figma |
+| Actualización | 22/10/2026 |
 
-## Enlaces de trabajo
+## Objetivo
 
-- [Archivo de Design revisable](https://www.figma.com/design/lSyFDomQELzVXsKalm0OQp/)
-- [Archivo original de Sites](https://www.figma.com/site/c4LcawrwLIGvA8g66faJZs/)
+Diseñar cinco pantallas de HOSTLOCK y explicar sus funcionalidades, navegación e información visible por perfil. Figma se utiliza como guía visual. Los comportamientos descritos corresponden al diseño previsto de la web, no a funciones implementadas.
 
-La revisión documental se basa en la copia de Design y las capturas compartidas. Los cambios posteriores en Sites deben copiarse a Design para que ambos archivos coincidan.
+## Archivos de diseño
 
-## Objetivo y alcance acordado
+- [Figma Design](https://www.figma.com/design/lSyFDomQELzVXsKalm0OQp/)
+- [Figma Sites original](https://www.figma.com/site/c4LcawrwLIGvA8g66faJZs/)
 
-Definir las funciones, estructura, información visible y navegación de la aplicación mediante bocetos, wireframes y mockups.
+## Alcance y funcionalidades
 
-La entrega se centra en cinco pantallas: Inicio, Servicios, Acceso, Panel general y Monitorización. Alertas detalladas, gestión de incidentes, evidencias, gestión de usuarios y configuración quedan como ampliaciones futuras, no como pantallas realizadas ni como recorridos exigidos en esta versión.
+La entrega comprende Inicio, Servicios, Acceso, Panel general y Monitorización. Permite representar la presentación pública, el inicio de sesión, la consulta según perfil y el cierre de sesión. No incluye pantallas independientes de administración, alertas, incidentes o evidencias.
 
-No es necesario implementar el backend para representar estos recorridos en el prototipo. Los datos ilustrativos no son resultados del laboratorio.
-
-## Mapa del sitio previsto
+## Mapa del sitio
 
 ```text
 Inicio
 ├── Servicios — público
 └── Acceso
-    └── Panel general — según perfil
-        ├── Monitorización — según perfil
-        └── Cerrar sesión → Acceso
+    ├── Administrador / Analista SOC
+    │   └── Panel general
+    │       ├── Monitorización
+    │       └── Cerrar sesión → Acceso
+    └── Usuario básico
+        └── Panel general resumido
+            └── Cerrar sesión → Acceso
 ```
 
-El mapa describe los destinos previstos. Sus conexiones están pendientes de validación en el prototipo.
+## Perfiles
 
-## Perfiles confirmados
-
-| Perfil | Alcance de esta entrega |
+| Perfil | Información visible y acceso previsto |
 |---|---|
-| Administrador | Panel general y monitorización; las funciones de administración avanzada quedan fuera del prototipo mínimo. |
-| Analista SOC | Consulta operativa del panel y monitorización; información exacta pendiente de concretar por pantalla. |
-| Usuario básico | Consulta resumida del estado general; información restringida y diferencias visuales pendientes de concretar. |
+| Administrador | Vista completa del Panel general y Monitorización detallada. |
+| Analista SOC | Los mismos datos de consulta, sin funciones de administración. |
+| Usuario básico | Estado general de los servicios, sin métricas detalladas de CPU, RAM, disco o red ni acceso a Monitorización detallada. |
 
-No se consideran implementados los permisos. Debe definirse la información exacta de cada perfil antes de cerrar el diseño.
+Administrador y analista comparten la vista de consulta, identificando su rol. La vista resumida es una variante del Panel general, no una sexta pantalla.
 
 ## Boceto inicial
 
-El alumno confirma que dispone de un boceto en papel. Pendiente de incorporar su fotografía o digitalización.
-
-## Pantallas y avance real
+## Pantallas, wireframes y mockups
 
 ### 1. Inicio
 
-Existe una sección denominada Inicio en Design. Pendiente de revisar sus elementos internos, identificar su wireframe y mockup e incorporar sus capturas.
+Su función prevista es presentar HOSTLOCK y permitir acceder a Servicios y Acceso.
 
-Función prevista: presentar HOSTLOCK y permitir acceder a Servicios o Acceso.
+#### Wireframe
 
-Pendiente: concretar textos visibles, botones y destinos de esta pantalla sin confundirla con Servicios.
+#### Mockup
 
 ### 2. Servicios
 
-#### Contenido revisado
+Pantalla pública con la misma información para todos los visitantes. Presenta tres tarjetas informativas, sin acciones ni pantallas adicionales:
 
-La pantalla presenta HOSTLOCK mediante tres bloques informativos:
-
-| Bloque | Texto visible |
+| Tarjeta | Texto visible |
 |---|---|
 | Infraestructura | Redes y servicios organizados en un entorno virtualizado. |
 | Ciberseguridad | Supervisión de sistemas y análisis de eventos del laboratorio. |
 | Evidencias | Estudio de la trazabilidad y la integridad de registros seleccionados. |
 
-Incluye el lema «Infraestructura y ciberseguridad en un mismo entorno», una presentación del laboratorio académico y el pie «HOSTLOCK · Proyecto académico ASIX».
+La cabecera muestra HOSTLOCK y el lema «Infraestructura y ciberseguridad en un mismo entorno». La presentación dice: «Un laboratorio académico para supervisar servicios, analizar eventos de seguridad y estudiar la integridad de las evidencias». El pie identifica el proyecto académico de ASIX.
 
-#### Acceso y navegación
+| Elemento | Funcionamiento previsto |
+|---|---|
+| Inicio | Regresar a Inicio. |
+| Servicios | Identificar la sección actual. |
+| Acceso | Abrir el formulario de inicio de sesión. |
+| Menú | Mostrar u ocultar las opciones de navegación. |
 
-Servicios será público y mostrará el mismo contenido informativo a todos los visitantes, sin datos privados del laboratorio.
+El diseño acordado prescinde de «Explorar el proyecto». Existen wireframes de escritorio, tablet y móvil; las copias del mockup de escritorio se destinarán a adaptar esas versiones.
 
-- Inicio: volver a la pantalla inicial.
-- Servicios: señalar la pantalla actual.
-- Acceso: abrir el formulario de inicio de sesión.
-- Menú: mostrar u ocultar las opciones de navegación.
-- Las tres tarjetas son informativas y no abren pantallas adicionales.
+#### Wireframe
 
-Se acuerda retirar «Explorar el proyecto» para simplificar. Su retirada del diseño todavía no se ha verificado.
-
-#### Estado y pendientes
-
-- Revisados wireframes Desktop, Tablet y Móvil.
-- Revisados tres mockups con tamaño de escritorio; dos se adaptarán a tablet y móvil.
-- Pendiente separar las opciones de menú en elementos independientes y asignar destinos.
-- En la copia de Design revisada, el mockup no contiene interacciones configuradas. Una tarjeta del wireframe tiene una acción de clic sin destino; debe retirarse al ser informativa.
-- Pendiente revisar legibilidad, incorporar capturas y comprobar navegación.
+#### Mockup
 
 ### 3. Acceso
 
-Existe el apartado de wireframe y UI; las capturas compartidas muestran la composición visual del formulario.
+La composición representa un formulario. El funcionamiento previsto consiste en introducir usuario y contraseña y pulsar Entrar para abrir el panel correspondiente al perfil. La contraseña se mostrará oculta. Las credenciales incorrectas mantendrán la pantalla de acceso con un aviso de error.
 
-Elementos previstos: título «Iniciar sesión», campo Usuario, campo Contraseña con caracteres ocultos, botón Entrar y mensaje de error.
+Esta descripción no implica autenticación real implementada.
 
-Recorrido previsto: acceso correcto simulado → Panel general; error simulado → permanecer en Acceso; regreso → Inicio.
+#### Wireframe
 
-Pendiente revisar las capas internas, completar etiquetas, representar el error y comprobar conexiones. El prototipo no demuestra autenticación real.
+#### Mockup
 
 ### 4. Panel general
 
-Existe el apartado de wireframe y UI. La captura compartida muestra cabecera HOSTLOCK, menú lateral, título del panel, acceso a Mi perfil y gráficos de tráfico de red, alertas por día y uso de recursos.
+El diseño muestra HOSTLOCK, navegación lateral y gráficos ilustrativos de Tráfico de red, Alertas por día y Uso de recursos. Los gráficos no son resultados reales del laboratorio. El resumen de alertas no implica una pantalla de gestión de alertas.
 
-Pendiente:
+Administrador y analista consultan la vista completa y pueden abrir Monitorización. El usuario básico consulta solo el estado general de los servicios, sin gráficos detallados ni acceso a Monitorización. Cerrar sesión conduce a Acceso.
 
-- Ajustar el menú al alcance mínimo; no dejar enlaces aparentes a pantallas futuras.
-- Completar indicadores superiores.
-- Definir datos, unidades, periodos y equipo representado.
-- Sustituir o explicar etiquetas genéricas de las imágenes de gráficos.
-- Concretar qué ve cada perfil.
-- Mantener Mi perfil solo si se resuelve dentro de las cinco pantallas, sin añadir otra pantalla obligatoria.
+#### Wireframe
 
-Los gráficos actuales son ilustrativos. Mostrar un resumen de alertas no implica disponer de una pantalla de gestión de alertas.
+#### Mockup
+
+#### Vista resumida del usuario básico
 
 ### 5. Monitorización
 
-Existen secciones de wireframe y UI en Design. El alumno confirma que está pendiente completar colores y contenido.
+El diseño de escritorio incorpora colores verdes, cabecera HOSTLOCK, siete etiquetas superiores y tres bloques visuales:
 
-Antes de cerrar este apartado se definirán: nombre del equipo o servicio, métricas visibles, unidades, periodo, última actualización y diferencias por perfil.
+| Bloque | Contenido representado |
+|---|---|
+| Estado del servidor | Imagen ilustrativa del estado del equipo. |
+| Tráfico de red | Imagen ilustrativa de actividad de red. |
+| Rendimiento del servicio | Imagen ilustrativa del rendimiento. |
 
-No se fijan cifras ni se afirma que la monitorización esté implementada. Pendiente revisar su contenido interno cuando se complete y comprobar el regreso al Panel general.
+La barra superior muestra Panel general, Monitorización, CPU, Memoria RAM, Disco, Red y Cerrar sesión. CPU, Memoria RAM, Disco y Red son indicadores informativos: no son botones y no abren pantallas ni tienen acciones.
+
+La franja inferior identifica «Equipo: Servidor web · Última actualización: — · Datos de demostración». El pie muestra «HOSTLOCK · Proyecto académico ASIX». Las cifras de las imágenes son ilustrativas, no mediciones reales.
+
+| Elemento | Funcionamiento previsto |
+|---|---|
+| Panel general | Regresar al panel. |
+| Monitorización | Identificar la pantalla actual. |
+| CPU, Memoria RAM, Disco y Red | Identificar métricas de consulta sin interacción. |
+| Cerrar sesión | Regresar a Acceso. |
+
+Esta pantalla se reserva a administrador y analista SOC. El usuario básico no dispone de acceso a la monitorización detallada.
+
+#### Wireframe
+
+#### Mockup
 
 ## Pruebas de navegación previstas
 
-Estas pruebas son propuestas, no resultados obtenidos. Se ajustarán a los datos y permisos definitivos.
+Son comprobaciones planificadas de la navegación y los perfiles; no resultados de pruebas ejecutadas. Las explicaciones describen el funcionamiento esperado, sin afirmar que las conexiones estén configuradas en Figma.
 
-| Perfil o escenario | Recorrido | Resultado esperado |
+| Escenario | Pasos | Resultado esperado |
 |---|---|---|
-| Visitante | Inicio → Servicios → Acceso | Puede leer los tres bloques y llegar al formulario sin iniciar sesión. |
-| Administrador | Acceso → Panel general → Monitorización → Panel → Cerrar sesión | Recorre las cinco pantallas aplicables y vuelve a Acceso sin enlaces sin destino. |
-| Analista SOC | Acceso → Panel → Monitorización → Panel | Consulta la información operativa acordada, sin opciones de administración fuera del alcance. |
-| Usuario básico | Acceso → Panel resumido → vista permitida de Monitorización → Cerrar sesión | Solo ve información resumida; pendiente concretar y representar esa vista. |
-| Error de acceso | Acceso → Entrar con credenciales de ejemplo incorrectas | Se representa un mensaje de error y no se avanza al panel. |
-
-Las conexiones deben simularse en Figma. No se presentan estas pruebas como comprobación de seguridad de una aplicación real.
-
-## Lista de comprobación de A2
-
-- [x] Herramienta online y enlaces identificados.
-- [x] Alcance de cinco pantallas acordado.
-- [x] Tres perfiles confirmados.
-- [x] Servicios público y tarjetas informativas acordados.
-- [x] Apartados de wireframe y UI localizados para Servicios, Acceso, Panel y Monitorización.
-- [ ] Incorporar el boceto en papel.
-- [ ] Revisar Inicio y el contenido interno de las pantallas restantes.
-- [ ] Completar colores y contenido de Monitorización.
-- [ ] Terminar las adaptaciones de tablet y móvil previstas.
-- [ ] Definir la información exacta visible por pantalla y perfil.
-- [ ] Anotar funciones y destinos de los elementos de navegación.
-- [ ] Configurar y revisar las conexiones del prototipo.
-- [ ] Incorporar capturas identificadas de wireframes y mockups.
-- [ ] Comprobar el acceso del profesor al informe y al prototipo.
+| Visitante | Inicio → Servicios → Acceso. | Lee los tres bloques públicos y llega al formulario sin ver información interna. |
+| Administrador | Acceso → Panel completo → Monitorización → Panel → Cerrar sesión. | Consulta los datos detallados y regresa a Acceso. |
+| Analista SOC | Acceso → Panel completo → Monitorización → Cerrar sesión. | Consulta los datos operativos sin funciones de administración. |
+| Usuario básico | Acceso → Panel resumido → Cerrar sesión. | Ve únicamente el estado general; no encuentra métricas detalladas ni acceso a Monitorización. |
+| Error de acceso | Introducir credenciales de ejemplo incorrectas y pulsar Entrar. | Permanece en Acceso con un mensaje de error. |
 
 ## Registro de avances
 
 | Fecha | Avance | Responsable |
 |---|---|---|
 | 21/10/2026 | Documento inicial y enlace a Figma Sites. | Deivid Cardona |
-| 22/10/2026 | Copia en Design para revisión; revisión de Servicios y acuerdo de cinco pantallas, tres perfiles y adaptaciones pendientes. | Deivid Cardona |
+| 22/10/2026 | Cinco pantallas acordadas, revisión de Servicios y Monitorización y definición de perfiles e indicadores informativos. | Deivid Cardona |
