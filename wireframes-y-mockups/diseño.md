@@ -1,8 +1,8 @@
-# A2 — Diseño de la interfaz de HOSTLOCK
+# Diseño de la interfaz de HOSTLOCK
 
 Equipo: Deivid Arley Cardona Pérez, Luis Alberto Rodríguez Aguilar y Pau Toledano Tortajada.
 
-[Volver al índice de diseño](./README.md) · [Ver diseño de referencia en Figma](https://www.figma.com/design/lSyFDomQELzVXsKalm0OQp/)
+[Volver a la portada del proyecto](../README.md) · [Ver diseño de referencia en Figma](https://www.figma.com/design/lSyFDomQELzVXsKalm0OQp/)
 
 ## Objetivo y alcance
 

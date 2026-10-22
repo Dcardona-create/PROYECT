@@ -18,9 +18,8 @@ La propuesta une tres líneas de trabajo: separar los servicios expuestos de los
 
 ## Documentación del proyecto
 
-| Investigaciones y aplicativos | Equipo y seguimiento | Wireframes y mockups |
+| [Investigaciones y aplicativos](./investigacion/README.md) | [Equipo y seguimiento](./equipo/README.md) | [Diseño](./wireframes-y-mockups/dise%C3%B1o.md) |
 |:---:|:---:|:---:|
-| [Ver investigaciones](./investigacion/README.md) | [Ver equipo](./equipo/README.md) | [Ver diseño A2](./wireframes-y-mockups/README.md) |
 
 ## Necesidad que aborda
 
