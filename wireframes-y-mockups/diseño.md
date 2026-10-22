@@ -1,27 +1,38 @@
 # A2 — Diseño de la interfaz de HOSTLOCK
 
-## Datos de la actividad
+Equipo: Deivid Arley Cardona Pérez, Luis Alberto Rodríguez Aguilar y Pau Toledano Tortajada.
 
-| Campo | Información |
-|---|---|
-| Alumno | Deivid Cardona |
-| Módulo | M0379 / Proyecto |
-| Ciclo | ASIX 2.º |
-| Herramienta | Figma |
-| Actualización | 22/10/2026 |
+[Volver al índice de diseño](./README.md) · [Ver diseño de referencia en Figma](https://www.figma.com/design/lSyFDomQELzVXsKalm0OQp/)
 
-## Objetivo
+## Objetivo y alcance
 
-Diseñar cinco pantallas de HOSTLOCK y explicar sus funcionalidades, navegación e información visible por perfil. Figma se utiliza como guía visual. Los comportamientos descritos corresponden al diseño previsto de la web, no a funciones implementadas.
+Definir la interfaz de HOSTLOCK, las funciones de sus elementos, la navegación y los datos visibles según el perfil. Figma actúa como referencia visual de la futura web; las capturas no representan una aplicación implementada.
 
-## Archivos de diseño
+El diseño comprende Inicio, Servicios, Acceso, Panel general y Monitorización. No requiere páginas independientes de administración, incidentes o evidencias en esta entrega.
 
-- [Figma Design](https://www.figma.com/design/lSyFDomQELzVXsKalm0OQp/)
-- [Figma Sites original](https://www.figma.com/site/c4LcawrwLIGvA8g66faJZs/)
+## Colores y tipografía
 
-## Alcance y funcionalidades
+Se conserva la identidad verde utilizada en Figma. La siguiente paleta toma los rellenos del mockup de Monitorización como referencia:
 
-La entrega comprende Inicio, Servicios, Acceso, Panel general y Monitorización. Permite representar la presentación pública, el inicio de sesión, la consulta según perfil y el cierre de sesión. No incluye pantallas independientes de administración, alertas, incidentes o evidencias.
+| Color | HEX | Aplicación |
+|---|---|---|
+| Verde oscuro | #0F5301 | Fondo base y zonas de cierre visual. |
+| Verde medio | #5DAF55 | Franjas y bloques de contenido. |
+| Verde suave | #86C098 | Indicadores e información secundaria. |
+| Verde claro | #C2FBB6 | Barra superior y superficies claras. |
+| Negro | #000000 | Texto e iconos sobre fondos claros. |
+| Blanco | #FFFFFF | Textos destacados sobre fondos verdes. |
+
+La paleta relaciona visualmente las pantallas y distingue navegación, contenido e información secundaria. Los degradados y transparencias producen variaciones sobre los colores base; las imágenes conservan sus propios tonos. Inter se utiliza en las etiquetas de Monitorización e Idiqlat en la marca y el pie de esa pantalla. Esta descripción no supone una evaluación formal de accesibilidad.
+
+## Funcionalidades
+
+- Presentación pública de HOSTLOCK y sus áreas de trabajo.
+- Acceso previsto mediante usuario y contraseña.
+- Consulta del Panel general según el perfil.
+- Monitorización detallada para administrador y analista SOC.
+- Resumen de servicios para usuario básico.
+- Cierre de sesión y regreso a Acceso.
 
 ## Mapa del sitio
 
@@ -30,7 +41,7 @@ Inicio
 ├── Servicios — público
 └── Acceso
     ├── Administrador / Analista SOC
-    │   └── Panel general
+    │   └── Panel general completo
     │       ├── Monitorización
     │       └── Cerrar sesión → Acceso
     └── Usuario básico
@@ -42,19 +53,21 @@ Inicio
 
 | Perfil | Información visible y acceso previsto |
 |---|---|
-| Administrador | Vista completa del Panel general y Monitorización detallada. |
+| Administrador | Panel completo y Monitorización detallada. |
 | Analista SOC | Los mismos datos de consulta, sin funciones de administración. |
-| Usuario básico | Estado general de los servicios, sin métricas detalladas de CPU, RAM, disco o red ni acceso a Monitorización detallada. |
+| Usuario básico | Estado general de los servicios, sin gráficos detallados ni métricas de CPU, RAM, disco o red y sin acceso a Monitorización. |
 
-Administrador y analista comparten la vista de consulta, identificando su rol. La vista resumida es una variante del Panel general, no una sexta pantalla.
+Administrador y analista comparten la vista de consulta, con el rol identificado. La vista resumida es una variante del Panel general, no otra página.
 
 ## Boceto inicial
 
-## Pantallas, wireframes y mockups
+[Archivo aportado: Hostlock — papel (HTML)](./evidencias/Hostlock-%20papel.html)
+
+## Pantallas y funcionamiento
 
 ### 1. Inicio
 
-Su función prevista es presentar HOSTLOCK y permitir acceder a Servicios y Acceso.
+Presentación prevista de HOSTLOCK. Permite ir a Servicios para conocer las áreas del proyecto y a Acceso para entrar en la zona privada.
 
 #### Wireframe
 
@@ -62,7 +75,9 @@ Su función prevista es presentar HOSTLOCK y permitir acceder a Servicios y Acce
 
 ### 2. Servicios
 
-Pantalla pública con la misma información para todos los visitantes. Presenta tres tarjetas informativas, sin acciones ni pantallas adicionales:
+![Mockup de Servicios en escritorio](./evidencias/mockup-servicios-escritorio.jpg)
+
+La pantalla pública presenta HOSTLOCK y tres tarjetas: Infraestructura, Ciberseguridad y Evidencias. Todos los visitantes ven la misma información, sin registros privados.
 
 | Tarjeta | Texto visible |
 |---|---|
@@ -70,85 +85,80 @@ Pantalla pública con la misma información para todos los visitantes. Presenta 
 | Ciberseguridad | Supervisión de sistemas y análisis de eventos del laboratorio. |
 | Evidencias | Estudio de la trazabilidad y la integridad de registros seleccionados. |
 
-La cabecera muestra HOSTLOCK y el lema «Infraestructura y ciberseguridad en un mismo entorno». La presentación dice: «Un laboratorio académico para supervisar servicios, analizar eventos de seguridad y estudiar la integridad de las evidencias». El pie identifica el proyecto académico de ASIX.
+La cabecera muestra el lema «Infraestructura y ciberseguridad en un mismo entorno». La presentación describe el laboratorio académico y el pie identifica el proyecto ASIX.
 
-| Elemento | Funcionamiento previsto |
-|---|---|
-| Inicio | Regresar a Inicio. |
-| Servicios | Identificar la sección actual. |
-| Acceso | Abrir el formulario de inicio de sesión. |
-| Menú | Mostrar u ocultar las opciones de navegación. |
-
-El diseño acordado prescinde de «Explorar el proyecto». Existen wireframes de escritorio, tablet y móvil; las copias del mockup de escritorio se destinarán a adaptar esas versiones.
+Las tarjetas son informativas, no botones. Inicio vuelve a la presentación; Servicios identifica esta sección; Acceso abre el formulario; el menú permite mostrar u ocultar la navegación. El elemento «Explorar el proyecto» que permanece en la referencia gráfica no forma parte del funcionamiento acordado.
 
 #### Wireframe
-
-#### Mockup
 
 ### 3. Acceso
 
-La composición representa un formulario. El funcionamiento previsto consiste en introducir usuario y contraseña y pulsar Entrar para abrir el panel correspondiente al perfil. La contraseña se mostrará oculta. Las credenciales incorrectas mantendrán la pantalla de acceso con un aviso de error.
+![Mockup de Acceso en escritorio](./evidencias/mockup-acceso-escritorio.jpg)
 
-Esta descripción no implica autenticación real implementada.
+La referencia representa dos campos sobre un icono de usuario. En la web, el primero corresponde a Usuario y el segundo a Contraseña. El usuario escrito será visible y la contraseña se mostrará oculta. La acción Entrar comprobará las credenciales y conducirá al panel según el perfil. Un error mantendrá el formulario con un aviso; volver a Inicio permitirá salir del acceso.
+
+La captura es una guía de composición: las etiquetas y la acción de entrada se definen aquí sin afirmar que ya aparezcan completas en la imagen. Los tres perfiles utilizan el mismo formulario.
 
 #### Wireframe
-
-#### Mockup
 
 ### 4. Panel general
 
-El diseño muestra HOSTLOCK, navegación lateral y gráficos ilustrativos de Tráfico de red, Alertas por día y Uso de recursos. Los gráficos no son resultados reales del laboratorio. El resumen de alertas no implica una pantalla de gestión de alertas.
+![Mockup del Panel general en escritorio](./evidencias/mockup-panel-general-escritorio.jpg)
 
-Administrador y analista consultan la vista completa y pueden abrir Monitorización. El usuario básico consulta solo el estado general de los servicios, sin gráficos detallados ni acceso a Monitorización. Cerrar sesión conduce a Acceso.
+La vista de referencia muestra HOSTLOCK, navegación lateral, servicios activos, alertas activas, última actualización y Mi perfil. El área central representa Tráfico de red, Alertas por día y Uso de recursos.
+
+| Información | Función prevista |
+|---|---|
+| Servicios activos | Resumir los servicios disponibles. |
+| Alertas activas | Resumir los avisos de seguridad. |
+| Última actualización | Indicar el momento de actualización de los datos. |
+| Tráfico de red | Representar la evolución de las comunicaciones. |
+| Alertas por día | Representar el número de alertas por fecha. |
+| Uso de recursos | Representar la utilización de recursos del equipo. |
+| Mi perfil | Identificar al usuario y su rol dentro del panel, sin otra página. |
+
+Administrador y analista ven esta consulta completa. El usuario básico dispone de una variante resumida con el estado general de los servicios y Cerrar sesión, sin gráficos detallados ni acceso a Monitorización.
+
+La navegación funcional de esta entrega se limita a Panel general, Monitorización para los perfiles autorizados y Cerrar sesión hacia Acceso. Las etiquetas de Usuarios, Configuración, Incidentes y Evidencias de la referencia visual no implican pantallas ni acciones implementadas dentro del alcance acordado. Los gráficos son ilustrativos.
 
 #### Wireframe
-
-#### Mockup
 
 #### Vista resumida del usuario básico
 
 ### 5. Monitorización
 
-El diseño de escritorio incorpora colores verdes, cabecera HOSTLOCK, siete etiquetas superiores y tres bloques visuales:
+![Mockup de Monitorización en escritorio](./evidencias/mockup-monitorizacion-escritorio.jpg)
 
-| Bloque | Contenido representado |
-|---|---|
-| Estado del servidor | Imagen ilustrativa del estado del equipo. |
-| Tráfico de red | Imagen ilustrativa de actividad de red. |
-| Rendimiento del servicio | Imagen ilustrativa del rendimiento. |
-
-La barra superior muestra Panel general, Monitorización, CPU, Memoria RAM, Disco, Red y Cerrar sesión. CPU, Memoria RAM, Disco y Red son indicadores informativos: no son botones y no abren pantallas ni tienen acciones.
-
-La franja inferior identifica «Equipo: Servidor web · Última actualización: — · Datos de demostración». El pie muestra «HOSTLOCK · Proyecto académico ASIX». Las cifras de las imágenes son ilustrativas, no mediciones reales.
+La pantalla presenta tres bloques: Estado del servidor, Tráfico de red y Rendimiento del servicio. Las imágenes representan el tipo de información a consultar, no mediciones reales del laboratorio.
 
 | Elemento | Funcionamiento previsto |
 |---|---|
-| Panel general | Regresar al panel. |
+| Panel general | Volver al resumen del panel. |
 | Monitorización | Identificar la pantalla actual. |
-| CPU, Memoria RAM, Disco y Red | Identificar métricas de consulta sin interacción. |
+| CPU | Información sobre utilización del procesador. |
+| Memoria RAM | Información sobre utilización de memoria. |
+| Disco | Información sobre ocupación del almacenamiento. |
+| Red | Información sobre tráfico de comunicaciones. |
 | Cerrar sesión | Regresar a Acceso. |
 
-Esta pantalla se reserva a administrador y analista SOC. El usuario básico no dispone de acceso a la monitorización detallada.
+CPU, Memoria RAM, Disco y Red son etiquetas informativas, no botones. No abren otras pantallas. La franja inferior identifica Servidor web, Última actualización: — y Datos de demostración. El pie identifica HOSTLOCK como proyecto académico ASIX.
+
+Administrador y analista pueden consultar Monitorización; el usuario básico no dispone de este acceso detallado.
 
 #### Wireframe
 
-#### Mockup
+## Navegabilidad y pruebas previstas
 
-## Pruebas de navegación previstas
+La navegación se define mediante nombres consistentes, regreso al panel y visibilidad según el perfil. Las siguientes comprobaciones son propuestas para demostrar el funcionamiento esperado, no pruebas ejecutadas de una aplicación real.
 
-Son comprobaciones planificadas de la navegación y los perfiles; no resultados de pruebas ejecutadas. Las explicaciones describen el funcionamiento esperado, sin afirmar que las conexiones estén configuradas en Figma.
-
-| Escenario | Pasos | Resultado esperado |
+| Escenario | Recorrido o acción | Resultado esperado |
 |---|---|---|
-| Visitante | Inicio → Servicios → Acceso. | Lee los tres bloques públicos y llega al formulario sin ver información interna. |
-| Administrador | Acceso → Panel completo → Monitorización → Panel → Cerrar sesión. | Consulta los datos detallados y regresa a Acceso. |
-| Analista SOC | Acceso → Panel completo → Monitorización → Cerrar sesión. | Consulta los datos operativos sin funciones de administración. |
-| Usuario básico | Acceso → Panel resumido → Cerrar sesión. | Ve únicamente el estado general; no encuentra métricas detalladas ni acceso a Monitorización. |
-| Error de acceso | Introducir credenciales de ejemplo incorrectas y pulsar Entrar. | Permanece en Acceso con un mensaje de error. |
+| Visitante | Inicio → Servicios → Acceso. | Consulta los tres bloques públicos y llega al formulario sin ver datos internos. |
+| Administrador | Acceso → Panel completo → Monitorización → Panel → Cerrar sesión. | Consulta los indicadores y regresa a Acceso. |
+| Analista SOC | Acceso → Panel completo → Monitorización → Cerrar sesión. | Consulta datos operativos sin funciones de administración. |
+| Usuario básico | Acceso → Panel resumido → Cerrar sesión. | Solo ve estado general, sin métricas detalladas ni acceso a Monitorización. |
+| Error de acceso | Introducir credenciales incorrectas y pulsar Entrar. | Permanece en Acceso y recibe un aviso de error. |
 
-## Registro de avances
+## Evidencias
 
-| Fecha | Avance | Responsable |
-|---|---|---|
-| 21/10/2026 | Documento inicial y enlace a Figma Sites. | Deivid Cardona |
-| 22/10/2026 | Cinco pantallas acordadas, revisión de Servicios y Monitorización y definición de perfiles e indicadores informativos. | Deivid Cardona |
+[Consultar archivos de capturas y boceto](./evidencias/)
